@@ -1,14 +1,6 @@
-package day1;
-import java.io.BufferedReader;
-import java.io.FileReader;
+package aoc.day1;
 
-class AOC1 {
-    public static void main(String[] args) {
-        System.out.println(new Solver(new Reader().readDepths()).solve2());
-    }
-}
-
-class Solver {
+public class AOC1 {
 
     private int[] depths;
 
@@ -41,28 +33,5 @@ class Solver {
             }
         }
         return count;
-    }
-}
-
-class Reader {
-    public String readDepths() {
-        try {
-            BufferedReader br = new BufferedReader(new FileReader("input.txt"));
-            try {
-                StringBuilder sb = new StringBuilder();
-                String line = br.readLine();
-                while (line != null) {
-                    sb.append(line);
-                    sb.append(System.lineSeparator());
-                    line = br.readLine();
-                }
-                return sb.toString();
-            } finally {
-                br.close();
-            }
-        } catch(Exception e) {
-            System.out.println(e);
-        }
-        return "";
     }
 }
